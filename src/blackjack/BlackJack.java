@@ -1,20 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package blackjack;
 
-/**
- *
- * @author Patrik
- */
+import java.util.Random;
+
+
 public class BlackJack {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+    
+        jatek();
+        
+        
+    }
+
+    private static void jatek() {
+        
+        int[] jatekosLapjai = new int[10];
+        int[] gepLapjai = new int[10];
+        
+        int jatekosLapokSzama = 2;
+        int gepLapokSzama = 2;
+        
+        jatekosLapjai[0] = kapLapot();
+        jatekosLapjai[1] = kapLapot();
+        kiirLapok(jatekosLapjai, jatekosLapokSzama, "Játékos");
+    }
+
+    private static int kapLapot() {
+        Random rnd = new Random();
+        return rnd.nextInt(10)+2; //2-11 között ad így
+    }
+
+    private static void kiirLapok(int[] lapok, int lapokSzama, String GvJ) {
+        System.out.print(GvJ + ": ");
+        for (int i = 0; i < lapokSzama; i++) {
+                    System.out.print(lapok[i] + ", ");
+        }
     }
     
 }
