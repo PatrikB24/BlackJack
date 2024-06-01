@@ -43,4 +43,9 @@ public class BlackJack {
         }
     }
     
+    public static boolean kaphatLap(int osszeg) {
+        return osszeg <= 21;
+    }
+    
+    
 }
