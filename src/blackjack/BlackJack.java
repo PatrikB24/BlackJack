@@ -25,6 +25,10 @@ public class BlackJack {
         jatekosLapjai[0] = kapLapot();
         jatekosLapjai[1] = kapLapot();
         kiirLapok(jatekosLapjai, jatekosLapokSzama, "Játékos");
+        
+        gepLapjai[0] = kapLapot();
+        gepLapjai[1] = kapLapot();
+        kiirLapok(gepLapjai, gepLapokSzama, "Gép");
     }
 
     private static int kapLapot() {
