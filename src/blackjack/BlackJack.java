@@ -37,6 +37,14 @@ public class BlackJack {
             kiirLapok(jatekosLapjai, jatekosLapokSzama, "Játékos");
          }
         
+         while (osszeg(gepLapjai, gepLapokSzama) < 15) {
+            gepLapjai[gepLapokSzama] = kapLapot();
+            gepLapokSzama++;
+            System.out.println("A gép kért egy lapot!");
+            kiirLapok(gepLapjai, gepLapokSzama, "Gép");
+        }
+         
+         
     }
 
     private static int kapLapot() {
