@@ -33,6 +33,7 @@ public class BlackJack {
          while (kaphatLap(osszeg(jatekosLapjai, jatekosLapokSzama))) {
             jatekosLapjai[jatekosLapokSzama] = kapLapot();
             jatekosLapokSzama++;
+             System.out.println("A játékos kért egy lapot!");
             kiirLapok(jatekosLapjai, jatekosLapokSzama, "Játékos");
          }
         
@@ -52,7 +53,7 @@ public class BlackJack {
     }
     
     public static boolean kaphatLap(int osszeg) {
-        return osszeg <= 21;
+        return osszeg < 15;
     }
     
     public static int osszeg(int[] lapok, int lapokSzama) {
