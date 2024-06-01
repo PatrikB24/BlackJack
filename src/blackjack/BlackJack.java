@@ -44,6 +44,21 @@ public class BlackJack {
             kiirLapok(gepLapjai, gepLapokSzama, "Gép");
         }
          
+         //győztes
+        int jatekosOsszeg = osszeg(jatekosLapjai, jatekosLapokSzama);
+        int gepOsszeg = osszeg(gepLapjai, gepLapokSzama);
+
+        if (jatekosOsszeg > 21) {
+            System.out.println("Játékos túllépte a 21-et. Gép nyert!");
+        } else if (gepOsszeg > 21) {
+            System.out.println("Gép túllépte a 21-et. Játékos nyert!");
+        } else if (jatekosOsszeg > gepOsszeg) {
+            System.out.println("Játékos nyert!");
+        } else if (gepOsszeg > jatekosOsszeg) {
+            System.out.println("Gép nyert!");
+        } else {
+            System.out.println("Döntetlen!");
+        }
          
     }
 
