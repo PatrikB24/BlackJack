@@ -29,6 +29,13 @@ public class BlackJack {
         gepLapjai[0] = kapLapot();
         gepLapjai[1] = kapLapot();
         kiirLapok(gepLapjai, gepLapokSzama, "Gép");
+        
+         while (kaphatLap(osszeg(jatekosLapjai, jatekosLapokSzama))) {
+            jatekosLapjai[jatekosLapokSzama] = kapLapot();
+            jatekosLapokSzama++;
+            kiirLapok(jatekosLapjai, jatekosLapokSzama, "Játékos");
+         }
+        
     }
 
     private static int kapLapot() {
@@ -41,11 +48,19 @@ public class BlackJack {
         for (int i = 0; i < lapokSzama; i++) {
                     System.out.print(lapok[i] + ", ");
         }
+        System.out.println(" | Összeg: " + osszeg(lapok, lapokSzama));
     }
     
     public static boolean kaphatLap(int osszeg) {
         return osszeg <= 21;
     }
     
+    public static int osszeg(int[] lapok, int lapokSzama) {
+        int osszeg = 0;
+        for (int i = 0; i < lapokSzama; i++) {
+            osszeg += lapok[i];
+        }
+        return osszeg;
+    }
     
 }
